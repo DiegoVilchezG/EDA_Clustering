@@ -3,6 +3,8 @@
 #include <random>
 #include <vector>
 #include <fstream>
+#include <iomanip>
+#include <chrono>
 
 using namespace std;
 
@@ -87,6 +89,8 @@ int main() {
     int dimensiones;
     cout << "Ingresar la cantidad de dimensiones: ";
     cin >> dimensiones;
+    std::chrono::time_point<std::chrono::high_resolution_clock> starter, ender;
+    starter = std::chrono::high_resolution_clock::now();
     cout << "Generando elementos..." << endl;
     vector<vector<int>> start = generate(dimensiones);
     cout << "Calculando distancias..." << endl;
@@ -96,4 +100,7 @@ int main() {
     cout << "Escribiendo informacion en archivos de texto..." << endl;
     writer(proc, end);
     cout << "Proceso terminado" << endl;
+    ender = std::chrono::high_resolution_clock::now();
+    int64_t duration = std::chrono::duration_cast<std::chrono::nanoseconds>(ender - starter).count();
+    cout << "Duración del proceso: " << duration/(pow(10,9)) << " segundos" << endl;
 }
