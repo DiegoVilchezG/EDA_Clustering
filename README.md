@@ -3,6 +3,8 @@ Un repositorio que incluye el trabajo realizado sobre clustering en datos n-dime
 
 Source.cpp incluye el código en C++ utilizado para este trabajo, que incluye las funciones de generado de conjuntos de datos, cálculo de las distancias euclidianas entre un punto determinado (en este caso, el primero del conjunto) y la agrupación de estas distancias en intervalos de 10 (esto debido a que, en caso contrario, la dispersión de los histogramas sería mucho mayor).
 
+La función para calcular el tiempo de los procesos se convirtió de nanosegundos a segundos para una métrica más precisa, dado que los tiempos mínimos son de 20 segundos aproximadamente.
+
 Nota: Los gráficos incluidos contienen los conjuntos de datos de hasta 5 dimensiones, debido a que el tiempo requerido para completar el proceso con 6 dimensiones a más es inmensamente grande.
 
 # Gráficos
